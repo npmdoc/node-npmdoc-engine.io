@@ -1,0 +1,2998 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/socketio/engine.io"
+
+    >engine.io (v3.0.0)</a>
+</h1>
+<h4>The realtime engine behind Socket.IO. Provides the foundation of a bidirectional connection between client and server</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io">module engine.io</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server">
+            function <span class="apidocSignatureSpan">engine.io.</span>Server
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket">
+            function <span class="apidocSignatureSpan">engine.io.</span>Socket
+            <span class="apidocSignatureSpan">(id, server, transport, req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport">
+            function <span class="apidocSignatureSpan">engine.io.</span>Transport
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.attach">
+            function <span class="apidocSignatureSpan">engine.io.</span>attach
+            <span class="apidocSignatureSpan">(server, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.io.Server">
+            function <span class="apidocSignatureSpan">engine.io.</span>io.Server
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.io.Socket">
+            function <span class="apidocSignatureSpan">engine.io.</span>io.Socket
+            <span class="apidocSignatureSpan">(id, server, transport, req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.io.Transport">
+            function <span class="apidocSignatureSpan">engine.io.</span>io.Transport
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.io.transports.websocket">
+            function <span class="apidocSignatureSpan">engine.io.</span>io.transports.websocket
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.listen">
+            function <span class="apidocSignatureSpan">engine.io.</span>listen
+            <span class="apidocSignatureSpan">(port, options, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">engine.io.</span>protocol</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>io.Server.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>io.Socket.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>io.Transport.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>io.parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>io.transports</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>io.transports.websocket.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.</span>transports</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.Server">module engine.io.Server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.Server">
+            function <span class="apidocSignatureSpan">engine.io.</span>Server
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.super_">
+            function <span class="apidocSignatureSpan">engine.io.Server.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.Server.</span>errorMessages</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.Server.</span>errors</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.Server.prototype">module engine.io.Server.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.attach">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>attach
+            <span class="apidocSignatureSpan">(server, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.close">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.generateId">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>generateId
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.handleRequest">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>handleRequest
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.handleUpgrade">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>handleUpgrade
+            <span class="apidocSignatureSpan">(req, socket, upgradeHead)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.handshake">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>handshake
+            <span class="apidocSignatureSpan">(transportName, req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.init">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.onWebSocket">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>onWebSocket
+            <span class="apidocSignatureSpan">(req, socket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.prepare">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>prepare
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.upgrades">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>upgrades
+            <span class="apidocSignatureSpan">(transport)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Server.prototype.verify">
+            function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>verify
+            <span class="apidocSignatureSpan">(req, upgrade, fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.Socket">module engine.io.Socket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.Socket">
+            function <span class="apidocSignatureSpan">engine.io.</span>Socket
+            <span class="apidocSignatureSpan">(id, server, transport, req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.super_">
+            function <span class="apidocSignatureSpan">engine.io.Socket.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.Socket.prototype">module engine.io.Socket.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.clearTransport">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>clearTransport
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.close">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>close
+            <span class="apidocSignatureSpan">(discard)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.closeTransport">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>closeTransport
+            <span class="apidocSignatureSpan">(discard)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.flush">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>flush
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.getAvailableUpgrades">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>getAvailableUpgrades
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.maybeUpgrade">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>maybeUpgrade
+            <span class="apidocSignatureSpan">(transport)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.onClose">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onClose
+            <span class="apidocSignatureSpan">(reason, description)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.onError">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onError
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.onOpen">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onOpen
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.onPacket">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onPacket
+            <span class="apidocSignatureSpan">(packet)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.send">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>send
+            <span class="apidocSignatureSpan">(data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.sendPacket">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>sendPacket
+            <span class="apidocSignatureSpan">(type, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.setPingTimeout">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>setPingTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.setTransport">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>setTransport
+            <span class="apidocSignatureSpan">(transport)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.setupSendCallback">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>setupSendCallback
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Socket.prototype.write">
+            function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>write
+            <span class="apidocSignatureSpan">(data, options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.Transport">module engine.io.Transport</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.Transport">
+            function <span class="apidocSignatureSpan">engine.io.</span>Transport
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.super_">
+            function <span class="apidocSignatureSpan">engine.io.Transport.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.Transport.prototype">module engine.io.Transport.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.prototype.close">
+            function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>close
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.prototype.discard">
+            function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>discard
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.prototype.onClose">
+            function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onClose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.prototype.onData">
+            function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.prototype.onError">
+            function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onError
+            <span class="apidocSignatureSpan">(msg, desc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.prototype.onPacket">
+            function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onPacket
+            <span class="apidocSignatureSpan">(packet)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.Transport.prototype.onRequest">
+            function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onRequest
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.parser">module engine.io.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.decodeBase64Packet">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>decodeBase64Packet
+            <span class="apidocSignatureSpan">(msg, binaryType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.decodePacket">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>decodePacket
+            <span class="apidocSignatureSpan">(data, binaryType, utf8decode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.decodePayload">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>decodePayload
+            <span class="apidocSignatureSpan">(data, binaryType, utf8decode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.decodePayloadAsBinary">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>decodePayloadAsBinary
+            <span class="apidocSignatureSpan">(data, binaryType, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.encodeBase64Packet">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>encodeBase64Packet
+            <span class="apidocSignatureSpan">(packet, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.encodePacket">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>encodePacket
+            <span class="apidocSignatureSpan">(packet, supportsBinary, utf8encode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.encodePayload">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>encodePayload
+            <span class="apidocSignatureSpan">(packets, supportsBinary, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.parser.encodePayloadAsBinary">
+            function <span class="apidocSignatureSpan">engine.io.parser.</span>encodePayloadAsBinary
+            <span class="apidocSignatureSpan">(packets, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">engine.io.parser.</span>protocol</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">engine.io.parser.</span>packets</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.transports">module engine.io.transports</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.transports.polling">
+            function <span class="apidocSignatureSpan">engine.io.transports.</span>polling
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.transports.websocket">
+            function <span class="apidocSignatureSpan">engine.io.transports.</span>websocket
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.transports.websocket">module engine.io.transports.websocket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.transports.websocket.websocket">
+            function <span class="apidocSignatureSpan">engine.io.transports.</span>websocket
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.transports.websocket.super_">
+            function <span class="apidocSignatureSpan">engine.io.transports.websocket.</span>super_
+            <span class="apidocSignatureSpan">(req)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.engine.io.transports.websocket.prototype">module engine.io.transports.websocket.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>handlesUpgrades</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>supportsFraming</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.transports.websocket.prototype.doClose">
+            function <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>doClose
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.transports.websocket.prototype.onData">
+            function <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>onData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.engine.io.transports.websocket.prototype.send">
+            function <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>send
+            <span class="apidocSignatureSpan">(packets)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io" id="apidoc.module.engine.io">module engine.io</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server" id="apidoc.element.engine.io.Server">
+        function <span class="apidocSignatureSpan">engine.io.</span>Server
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(opts) {
+  if (!(this instanceof Server)) {
+    return new Server(opts);
+  }
+
+  this.clients = {};
+  this.clientsCount = 0;
+
+  opts = opts || {};
+
+  this.wsEngine = opts.wsEngine || process.env.EIO_WS_ENGINE || &#x27;uws&#x27;;
+  this.pingTimeout = opts.pingTimeout || 60000;
+  this.pingInterval = opts.pingInterval || 25000;
+  this.upgradeTimeout = opts.upgradeTimeout || 10000;
+  this.maxHttpBufferSize = opts.maxHttpBufferSize || 10E7;
+  this.transports = opts.transports || Object.keys(transports);
+  this.allowUpgrades = false !== opts.allowUpgrades;
+  this.allowRequest = opts.allowRequest;
+  this.cookie = false !== opts.cookie ? (opts.cookie || &#x27;io&#x27;) : false;
+  this.cookiePath = false !== opts.cookiePath ? (opts.cookiePath || &#x27;/&#x27;) : false;
+  this.cookieHttpOnly = false !== opts.cookieHttpOnly;
+  this.perMessageDeflate = false !== opts.perMessageDeflate ? (opts.perMessageDeflate || true) : false;
+  this.httpCompression = false !== opts.httpCompression ? (opts.httpCompression || {}) : false;
+  this.initialPacket = opts.initialPacket;
+
+  var self = this;
+
+  // initialize compression options
+  [&#x27;perMessageDeflate&#x27;, &#x27;httpCompression&#x27;].forEach(function (type) {
+    var compression = self[type];
+    if (true === compression) self[type] = compression = {};
+    if (compression &#x26;&#x26; null == compression.threshold) {
+      compression.threshold = 1024;
+    }
+  });
+
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+#### (C) Passing in requests
+
+```js
+var engine = require(&#x27;engine.io&#x27;);
+var server = new engine.<span class="apidocCodeKeywordSpan">Server</span>();
+
+server.on(&#x27;connection&#x27;, function(socket){
+  socket.send(&#x27;hi&#x27;);
+});
+
+// …
+httpServer.on(&#x27;upgrade&#x27;, function(req, socket, head){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket" id="apidoc.element.engine.io.Socket">
+        function <span class="apidocSignatureSpan">engine.io.</span>Socket
+        <span class="apidocSignatureSpan">(id, server, transport, req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Socket(id, server, transport, req) {
+  this.id = id;
+  this.server = server;
+  this.upgrading = false;
+  this.upgraded = false;
+  this.readyState = &#x27;opening&#x27;;
+  this.writeBuffer = [];
+  this.packetsFn = [];
+  this.sentCallbackFn = [];
+  this.cleanupFn = [];
+  this.request = req;
+
+  // Cache IP since it might not be in the req later
+  this.remoteAddress = req.connection.remoteAddress;
+
+  this.checkIntervalTimer = null;
+  this.upgradeTimeoutTimer = null;
+  this.pingTimeoutTimer = null;
+
+  this.setTransport(transport);
+  this.onOpen();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Client
+
+```html
+&#x3c;script src=&#x22;/path/to/engine.io.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script&#x3e;
+  var socket = new eio.<span class="apidocCodeKeywordSpan">Socket</span>(&#x27;ws://localhost/&#x27;);
+  socket.on(&#x27;open&#x27;, function(){
+    socket.on(&#x27;message&#x27;, function(data){});
+    socket.on(&#x27;close&#x27;, function(){});
+  });
+&#x3c;/script&#x3e;
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport" id="apidoc.element.engine.io.Transport">
+        function <span class="apidocSignatureSpan">engine.io.</span>Transport
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transport(req) {
+  this.readyState = &#x27;open&#x27;;
+  this.discarded = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.attach" id="apidoc.element.engine.io.attach">
+        function <span class="apidocSignatureSpan">engine.io.</span>attach
+        <span class="apidocSignatureSpan">(server, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function attach(server, options) {
+  var engine = new exports.Server(options);
+  engine.attach(server, options);
+  return engine;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### (B) Intercepting requests for a http.Server
+
+```js
+var engine = require(&#x27;engine.io&#x27;);
+var http = require(&#x27;http&#x27;).createServer().listen(3000);
+var server = engine.<span class="apidocCodeKeywordSpan">attach</span>(http);
+
+server.on(&#x27;connection&#x27;, function (socket) {
+  socket.on(&#x27;message&#x27;, function(data){ });
+  socket.on(&#x27;close&#x27;, function(){ });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.io.Server" id="apidoc.element.engine.io.io.Server">
+        function <span class="apidocSignatureSpan">engine.io.</span>io.Server
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(opts) {
+  if (!(this instanceof Server)) {
+    return new Server(opts);
+  }
+
+  this.clients = {};
+  this.clientsCount = 0;
+
+  opts = opts || {};
+
+  this.wsEngine = opts.wsEngine || process.env.EIO_WS_ENGINE || &#x27;uws&#x27;;
+  this.pingTimeout = opts.pingTimeout || 60000;
+  this.pingInterval = opts.pingInterval || 25000;
+  this.upgradeTimeout = opts.upgradeTimeout || 10000;
+  this.maxHttpBufferSize = opts.maxHttpBufferSize || 10E7;
+  this.transports = opts.transports || Object.keys(transports);
+  this.allowUpgrades = false !== opts.allowUpgrades;
+  this.allowRequest = opts.allowRequest;
+  this.cookie = false !== opts.cookie ? (opts.cookie || &#x27;io&#x27;) : false;
+  this.cookiePath = false !== opts.cookiePath ? (opts.cookiePath || &#x27;/&#x27;) : false;
+  this.cookieHttpOnly = false !== opts.cookieHttpOnly;
+  this.perMessageDeflate = false !== opts.perMessageDeflate ? (opts.perMessageDeflate || true) : false;
+  this.httpCompression = false !== opts.httpCompression ? (opts.httpCompression || {}) : false;
+  this.initialPacket = opts.initialPacket;
+
+  var self = this;
+
+  // initialize compression options
+  [&#x27;perMessageDeflate&#x27;, &#x27;httpCompression&#x27;].forEach(function (type) {
+    var compression = self[type];
+    if (true === compression) self[type] = compression = {};
+    if (compression &#x26;&#x26; null == compression.threshold) {
+      compression.threshold = 1024;
+    }
+  });
+
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.io.Socket" id="apidoc.element.engine.io.io.Socket">
+        function <span class="apidocSignatureSpan">engine.io.</span>io.Socket
+        <span class="apidocSignatureSpan">(id, server, transport, req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Socket(id, server, transport, req) {
+  this.id = id;
+  this.server = server;
+  this.upgrading = false;
+  this.upgraded = false;
+  this.readyState = &#x27;opening&#x27;;
+  this.writeBuffer = [];
+  this.packetsFn = [];
+  this.sentCallbackFn = [];
+  this.cleanupFn = [];
+  this.request = req;
+
+  // Cache IP since it might not be in the req later
+  this.remoteAddress = req.connection.remoteAddress;
+
+  this.checkIntervalTimer = null;
+  this.upgradeTimeoutTimer = null;
+  this.pingTimeoutTimer = null;
+
+  this.setTransport(transport);
+  this.onOpen();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.io.Transport" id="apidoc.element.engine.io.io.Transport">
+        function <span class="apidocSignatureSpan">engine.io.</span>io.Transport
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transport(req) {
+  this.readyState = &#x27;open&#x27;;
+  this.discarded = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.io.transports.websocket" id="apidoc.element.engine.io.io.transports.websocket">
+        function <span class="apidocSignatureSpan">engine.io.</span>io.transports.websocket
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebSocket(req) {
+  Transport.call(this, req);
+  var self = this;
+  this.socket = req.websocket;
+  this.socket.on(&#x27;message&#x27;, this.onData.bind(this));
+  this.socket.once(&#x27;close&#x27;, this.onClose.bind(this));
+  this.socket.on(&#x27;error&#x27;, this.onError.bind(this));
+  this.socket.on(&#x27;headers&#x27;, onHeaders);
+  this.writable = true;
+  this.perMessageDeflate = null;
+
+  function onHeaders (headers) {
+    self.emit(&#x27;headers&#x27;, headers);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.listen" id="apidoc.element.engine.io.listen">
+        function <span class="apidocSignatureSpan">engine.io.</span>listen
+        <span class="apidocSignatureSpan">(port, options, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listen(port, options, fn) {
+  if (&#x27;function&#x27; === typeof options) {
+    fn = options;
+    options = {};
+  }
+
+  var server = http.createServer(function (req, res) {
+    res.writeHead(501);
+    res.end(&#x27;Not Implemented&#x27;);
+  });
+
+  // create engine server
+  var engine = exports.attach(server, options);
+  engine.httpServer = server;
+
+  server.listen(port, fn);
+
+  return engine;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Server
+
+#### (A) Listening on a port
+
+```js
+var engine = require(&#x27;engine.io&#x27;);
+var server = engine.<span class="apidocCodeKeywordSpan">listen</span>(80);
+
+server.on(&#x27;connection&#x27;, function(socket){
+  socket.send(&#x27;utf 8 string&#x27;);
+  socket.send(new Buffer([0, 1, 2, 3, 4, 5])); // binary data
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.Server" id="apidoc.module.engine.io.Server">module engine.io.Server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.Server" id="apidoc.element.engine.io.Server.Server">
+        function <span class="apidocSignatureSpan">engine.io.</span>Server
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(opts) {
+  if (!(this instanceof Server)) {
+    return new Server(opts);
+  }
+
+  this.clients = {};
+  this.clientsCount = 0;
+
+  opts = opts || {};
+
+  this.wsEngine = opts.wsEngine || process.env.EIO_WS_ENGINE || &#x27;uws&#x27;;
+  this.pingTimeout = opts.pingTimeout || 60000;
+  this.pingInterval = opts.pingInterval || 25000;
+  this.upgradeTimeout = opts.upgradeTimeout || 10000;
+  this.maxHttpBufferSize = opts.maxHttpBufferSize || 10E7;
+  this.transports = opts.transports || Object.keys(transports);
+  this.allowUpgrades = false !== opts.allowUpgrades;
+  this.allowRequest = opts.allowRequest;
+  this.cookie = false !== opts.cookie ? (opts.cookie || &#x27;io&#x27;) : false;
+  this.cookiePath = false !== opts.cookiePath ? (opts.cookiePath || &#x27;/&#x27;) : false;
+  this.cookieHttpOnly = false !== opts.cookieHttpOnly;
+  this.perMessageDeflate = false !== opts.perMessageDeflate ? (opts.perMessageDeflate || true) : false;
+  this.httpCompression = false !== opts.httpCompression ? (opts.httpCompression || {}) : false;
+  this.initialPacket = opts.initialPacket;
+
+  var self = this;
+
+  // initialize compression options
+  [&#x27;perMessageDeflate&#x27;, &#x27;httpCompression&#x27;].forEach(function (type) {
+    var compression = self[type];
+    if (true === compression) self[type] = compression = {};
+    if (compression &#x26;&#x26; null == compression.threshold) {
+      compression.threshold = 1024;
+    }
+  });
+
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+#### (C) Passing in requests
+
+```js
+var engine = require(&#x27;engine.io&#x27;);
+var server = new engine.<span class="apidocCodeKeywordSpan">Server</span>();
+
+server.on(&#x27;connection&#x27;, function(socket){
+  socket.send(&#x27;hi&#x27;);
+});
+
+// …
+httpServer.on(&#x27;upgrade&#x27;, function(req, socket, head){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.super_" id="apidoc.element.engine.io.Server.super_">
+        function <span class="apidocSignatureSpan">engine.io.Server.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.Server.prototype" id="apidoc.module.engine.io.Server.prototype">module engine.io.Server.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.attach" id="apidoc.element.engine.io.Server.prototype.attach">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>attach
+        <span class="apidocSignatureSpan">(server, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (server, options) {
+  var self = this;
+  options = options || {};
+  var path = (options.path || &#x27;/engine.io&#x27;).replace(/\/$/, &#x27;&#x27;);
+
+  var destroyUpgradeTimeout = options.destroyUpgradeTimeout || 1000;
+
+  // normalize path
+  path += &#x27;/&#x27;;
+
+  function check (req) {
+    if (&#x27;OPTIONS&#x27; === req.method &#x26;&#x26; false === options.handlePreflightRequest) {
+      return false;
+    }
+    return path === req.url.substr(0, path.length);
+  }
+
+  // cache and clean up listeners
+  var listeners = server.listeners(&#x27;request&#x27;).slice(0);
+  server.removeAllListeners(&#x27;request&#x27;);
+  server.on(&#x27;close&#x27;, self.close.bind(self));
+  server.on(&#x27;listening&#x27;, self.init.bind(self));
+
+  // add request handler
+  server.on(&#x27;request&#x27;, function (req, res) {
+    if (check(req)) {
+      debug(&#x27;intercepting request for path &#x22;%s&#x22;&#x27;, path);
+      if (&#x27;OPTIONS&#x27; === req.method &#x26;&#x26; &#x27;function&#x27; === typeof options.handlePreflightRequest) {
+        options.handlePreflightRequest.call(server, req, res);
+      } else {
+        self.handleRequest(req, res);
+      }
+    } else {
+      for (var i = 0, l = listeners.length; i &#x3c; l; i++) {
+        listeners[i].call(server, req, res);
+      }
+    }
+  });
+
+  if (~self.transports.indexOf(&#x27;websocket&#x27;)) {
+    server.on(&#x27;upgrade&#x27;, function (req, socket, head) {
+      if (check(req)) {
+        self.handleUpgrade(req, socket, head);
+      } else if (false !== options.destroyUpgrade) {
+        // default node behavior is to disconnect when no handlers
+        // but by adding a handler, we prevent that
+        // and if no eio thing handles the upgrade
+        // then the socket needs to die!
+        setTimeout(function () {
+          if (socket.writable &#x26;&#x26; socket.bytesWritten &#x3c;= 0) {
+            return socket.end();
+          }
+        }, destroyUpgradeTimeout);
+      }
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### (B) Intercepting requests for a http.Server
+
+```js
+var engine = require(&#x27;engine.io&#x27;);
+var http = require(&#x27;http&#x27;).createServer().listen(3000);
+var server = engine.<span class="apidocCodeKeywordSpan">attach</span>(http);
+
+server.on(&#x27;connection&#x27;, function (socket) {
+  socket.on(&#x27;message&#x27;, function(data){ });
+  socket.on(&#x27;close&#x27;, function(){ });
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.close" id="apidoc.element.engine.io.Server.prototype.close">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  debug(&#x27;closing all open clients&#x27;);
+  for (var i in this.clients) {
+    if (this.clients.hasOwnProperty(i)) {
+      this.clients[i].close(true);
+    }
+  }
+  if (this.ws) {
+    debug(&#x27;closing webSocketServer&#x27;);
+    this.ws.close();
+    // don&#x27;t delete this.ws because it can be used again if the http server starts listening again
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.generateId" id="apidoc.element.engine.io.Server.prototype.generateId">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>generateId
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateId = function (req) {
+  return base64id.generateId();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.handleRequest" id="apidoc.element.engine.io.Server.prototype.handleRequest">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>handleRequest
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleRequest = function (req, res) {
+  debug(&#x27;handling &#x22;%s&#x22; http request &#x22;%s&#x22;&#x27;, req.method, req.url);
+  this.prepare(req);
+  req.res = res;
+
+  var self = this;
+  this.verify(req, false, function (err, success) {
+    if (!success) {
+      sendErrorMessage(req, res, err);
+      return;
+    }
+
+    if (req._query.sid) {
+      debug(&#x27;setting new request for existing client&#x27;);
+      self.clients[req._query.sid].transport.onRequest(req);
+    } else {
+      self.handshake(req._query.transport, req);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+// …
+httpServer.on(&#x27;upgrade&#x27;, function(req, socket, head){
+  server.handleUpgrade(req, socket, head);
+});
+httpServer.on(&#x27;request&#x27;, function(req, res){
+  server.<span class="apidocCodeKeywordSpan">handleRequest</span>(req, res);
+});
+```
+
+### Client
+
+```html
+&#x3c;script src=&#x22;/path/to/engine.io.js&#x22;&#x3e;&#x3c;/script&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.handleUpgrade" id="apidoc.element.engine.io.Server.prototype.handleUpgrade">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>handleUpgrade
+        <span class="apidocSignatureSpan">(req, socket, upgradeHead)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleUpgrade = function (req, socket, upgradeHead) {
+  this.prepare(req);
+
+  var self = this;
+  this.verify(req, true, function (err, success) {
+    if (!success) {
+      abortConnection(socket, err);
+      return;
+    }
+
+    var head = new Buffer(upgradeHead.length);
+    upgradeHead.copy(head);
+    upgradeHead = null;
+
+    // delegate to ws
+    self.ws.handleUpgrade(req, socket, head, function (conn) {
+      self.onWebSocket(req, conn);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+server.on(&#x27;connection&#x27;, function(socket){
+  socket.send(&#x27;hi&#x27;);
+});
+
+// …
+httpServer.on(&#x27;upgrade&#x27;, function(req, socket, head){
+  server.<span class="apidocCodeKeywordSpan">handleUpgrade</span>(req, socket, head);
+});
+httpServer.on(&#x27;request&#x27;, function(req, res){
+  server.handleRequest(req, res);
+});
+```
+
+### Client
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.handshake" id="apidoc.element.engine.io.Server.prototype.handshake">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>handshake
+        <span class="apidocSignatureSpan">(transportName, req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handshake = function (transportName, req) {
+  var id = this.generateId(req);
+
+  debug(&#x27;handshaking client &#x22;%s&#x22;&#x27;, id);
+
+  try {
+    var transport = new transports[transportName](req);
+    if (&#x27;polling&#x27; === transportName) {
+      transport.maxHttpBufferSize = this.maxHttpBufferSize;
+      transport.httpCompression = this.httpCompression;
+    } else if (&#x27;websocket&#x27; === transportName) {
+      transport.perMessageDeflate = this.perMessageDeflate;
+    }
+
+    if (req._query &#x26;&#x26; req._query.b64) {
+      transport.supportsBinary = false;
+    } else {
+      transport.supportsBinary = true;
+    }
+  } catch (e) {
+    sendErrorMessage(req, req.res, Server.errors.BAD_REQUEST);
+    return;
+  }
+  var socket = new Socket(id, this, transport, req);
+  var self = this;
+
+  if (false !== this.cookie) {
+    transport.on(&#x27;headers&#x27;, function (headers) {
+      headers[&#x27;Set-Cookie&#x27;] = cookieMod.serialize(self.cookie, id,
+        {
+          path: self.cookiePath,
+          httpOnly: self.cookiePath ? self.cookieHttpOnly : false
+        });
+    });
+  }
+
+  transport.onRequest(req);
+
+  this.clients[id] = socket;
+  this.clientsCount++;
+
+  socket.once(&#x27;close&#x27;, function () {
+    delete self.clients[id];
+    self.clientsCount--;
+  });
+
+  this.emit(&#x27;connection&#x27;, socket);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.init" id="apidoc.element.engine.io.Server.prototype.init">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  if (!~this.transports.indexOf(&#x27;websocket&#x27;)) return;
+
+  if (this.ws) this.ws.close();
+
+  var wsModule;
+  try {
+    wsModule = require(this.wsEngine);
+  } catch (ex) {
+    this.wsEngine = &#x27;ws&#x27;;
+    // keep require(&#x27;ws&#x27;) as separate expression for packers (browserify, etc)
+    wsModule = require(&#x27;ws&#x27;);
+  }
+  this.ws = new wsModule.Server({
+    noServer: true,
+    clientTracking: false,
+    perMessageDeflate: this.perMessageDeflate,
+    maxPayload: this.maxHttpBufferSize
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.onWebSocket" id="apidoc.element.engine.io.Server.prototype.onWebSocket">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>onWebSocket
+        <span class="apidocSignatureSpan">(req, socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onWebSocket = function (req, socket) {
+  socket.on(&#x27;error&#x27;, onUpgradeError);
+
+  if (!transports[req._query.transport].prototype.handlesUpgrades) {
+    debug(&#x27;transport doesnt handle upgraded requests&#x27;);
+    socket.close();
+    return;
+  }
+
+  // get client id
+  var id = req._query.sid;
+
+  // keep a reference to the ws.Socket
+  req.websocket = socket;
+
+  if (id) {
+    var client = this.clients[id];
+    if (!client) {
+      debug(&#x27;upgrade attempt for closed client&#x27;);
+      socket.close();
+    } else if (client.upgrading) {
+      debug(&#x27;transport has already been trying to upgrade&#x27;);
+      socket.close();
+    } else if (client.upgraded) {
+      debug(&#x27;transport had already been upgraded&#x27;);
+      socket.close();
+    } else {
+      debug(&#x27;upgrading existing transport&#x27;);
+
+      // transport error handling takes over
+      socket.removeListener(&#x27;error&#x27;, onUpgradeError);
+
+      var transport = new transports[req._query.transport](req);
+      if (req._query &#x26;&#x26; req._query.b64) {
+        transport.supportsBinary = false;
+      } else {
+        transport.supportsBinary = true;
+      }
+      transport.perMessageDeflate = this.perMessageDeflate;
+      client.maybeUpgrade(transport);
+    }
+  } else {
+    // transport error handling takes over
+    socket.removeListener(&#x27;error&#x27;, onUpgradeError);
+
+    this.handshake(req._query.transport, req);
+  }
+
+  function onUpgradeError () {
+    debug(&#x27;websocket error before upgrade&#x27;);
+    // socket.close() not needed
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.prepare" id="apidoc.element.engine.io.Server.prototype.prepare">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>prepare
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepare = function (req) {
+  // try to leverage pre-existing `req._query` (e.g: from connect)
+  if (!req._query) {
+    req._query = ~req.url.indexOf(&#x27;?&#x27;) ? qs.parse(parse(req.url).query) : {};
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.upgrades" id="apidoc.element.engine.io.Server.prototype.upgrades">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>upgrades
+        <span class="apidocSignatureSpan">(transport)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upgrades = function (transport) {
+  if (!this.allowUpgrades) return [];
+  return transports[transport].upgradesTo || [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Server.prototype.verify" id="apidoc.element.engine.io.Server.prototype.verify">
+        function <span class="apidocSignatureSpan">engine.io.Server.prototype.</span>verify
+        <span class="apidocSignatureSpan">(req, upgrade, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">verify = function (req, upgrade, fn) {
+  // transport check
+  var transport = req._query.transport;
+  if (!~this.transports.indexOf(transport)) {
+    debug(&#x27;unknown transport &#x22;%s&#x22;&#x27;, transport);
+    return fn(Server.errors.UNKNOWN_TRANSPORT, false);
+  }
+
+  // sid check
+  var sid = req._query.sid;
+  if (sid) {
+    if (!this.clients.hasOwnProperty(sid)) {
+      return fn(Server.errors.UNKNOWN_SID, false);
+    }
+    if (!upgrade &#x26;&#x26; this.clients[sid].transport.name !== transport) {
+      debug(&#x27;bad request: unexpected transport without upgrade&#x27;);
+      return fn(Server.errors.BAD_REQUEST, false);
+    }
+  } else {
+    // handshake is GET only
+    if (&#x27;GET&#x27; !== req.method) return fn(Server.errors.BAD_HANDSHAKE_METHOD, false);
+    if (!this.allowRequest) return fn(null, true);
+    return this.allowRequest(req, fn);
+  }
+
+  fn(null, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.Socket" id="apidoc.module.engine.io.Socket">module engine.io.Socket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.Socket" id="apidoc.element.engine.io.Socket.Socket">
+        function <span class="apidocSignatureSpan">engine.io.</span>Socket
+        <span class="apidocSignatureSpan">(id, server, transport, req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Socket(id, server, transport, req) {
+  this.id = id;
+  this.server = server;
+  this.upgrading = false;
+  this.upgraded = false;
+  this.readyState = &#x27;opening&#x27;;
+  this.writeBuffer = [];
+  this.packetsFn = [];
+  this.sentCallbackFn = [];
+  this.cleanupFn = [];
+  this.request = req;
+
+  // Cache IP since it might not be in the req later
+  this.remoteAddress = req.connection.remoteAddress;
+
+  this.checkIntervalTimer = null;
+  this.upgradeTimeoutTimer = null;
+  this.pingTimeoutTimer = null;
+
+  this.setTransport(transport);
+  this.onOpen();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Client
+
+```html
+&#x3c;script src=&#x22;/path/to/engine.io.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script&#x3e;
+  var socket = new eio.<span class="apidocCodeKeywordSpan">Socket</span>(&#x27;ws://localhost/&#x27;);
+  socket.on(&#x27;open&#x27;, function(){
+    socket.on(&#x27;message&#x27;, function(data){});
+    socket.on(&#x27;close&#x27;, function(){});
+  });
+&#x3c;/script&#x3e;
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.super_" id="apidoc.element.engine.io.Socket.super_">
+        function <span class="apidocSignatureSpan">engine.io.Socket.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.Socket.prototype" id="apidoc.module.engine.io.Socket.prototype">module engine.io.Socket.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.clearTransport" id="apidoc.element.engine.io.Socket.prototype.clearTransport">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>clearTransport
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearTransport = function () {
+  var cleanup;
+
+  var toCleanUp = this.cleanupFn.length;
+
+  for (var i = 0; i &#x3c; toCleanUp; i++) {
+    cleanup = this.cleanupFn.shift();
+    cleanup();
+  }
+
+  // silence further transport errors and prevent uncaught exceptions
+  this.transport.on(&#x27;error&#x27;, function () {
+    debug(&#x27;error triggered by discarded transport&#x27;);
+  });
+
+  // ensure transport won&#x27;t stay open
+  this.transport.close();
+
+  clearTimeout(this.pingTimeoutTimer);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.close" id="apidoc.element.engine.io.Socket.prototype.close">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>close
+        <span class="apidocSignatureSpan">(discard)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (discard) {
+  if (&#x27;open&#x27; !== this.readyState) return;
+
+  this.readyState = &#x27;closing&#x27;;
+
+  if (this.writeBuffer.length) {
+    this.once(&#x27;drain&#x27;, this.closeTransport.bind(this, discard));
+    return;
+  }
+
+  this.closeTransport(discard);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.closeTransport" id="apidoc.element.engine.io.Socket.prototype.closeTransport">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>closeTransport
+        <span class="apidocSignatureSpan">(discard)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">closeTransport = function (discard) {
+  if (discard) this.transport.discard();
+  this.transport.close(this.onClose.bind(this, &#x27;forced close&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.flush" id="apidoc.element.engine.io.Socket.prototype.flush">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>flush
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flush = function () {
+  if (&#x27;closed&#x27; !== this.readyState &#x26;&#x26;
+                this.transport.writable &#x26;&#x26;
+                this.writeBuffer.length) {
+    debug(&#x27;flushing buffer to transport&#x27;);
+    this.emit(&#x27;flush&#x27;, this.writeBuffer);
+    this.server.emit(&#x27;flush&#x27;, this, this.writeBuffer);
+    var wbuf = this.writeBuffer;
+    this.writeBuffer = [];
+    if (!this.transport.supportsFraming) {
+      this.sentCallbackFn.push(this.packetsFn);
+    } else {
+      this.sentCallbackFn.push.apply(this.sentCallbackFn, this.packetsFn);
+    }
+    this.packetsFn = [];
+    this.transport.send(wbuf);
+    this.emit(&#x27;drain&#x27;);
+    this.server.emit(&#x27;drain&#x27;, this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.getAvailableUpgrades" id="apidoc.element.engine.io.Socket.prototype.getAvailableUpgrades">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>getAvailableUpgrades
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAvailableUpgrades = function () {
+  var availableUpgrades = [];
+  var allUpgrades = this.server.upgrades(this.transport.name);
+  for (var i = 0, l = allUpgrades.length; i &#x3c; l; ++i) {
+    var upg = allUpgrades[i];
+    if (this.server.transports.indexOf(upg) !== -1) {
+      availableUpgrades.push(upg);
+    }
+  }
+  return availableUpgrades;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.maybeUpgrade" id="apidoc.element.engine.io.Socket.prototype.maybeUpgrade">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>maybeUpgrade
+        <span class="apidocSignatureSpan">(transport)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maybeUpgrade = function (transport) {
+  debug(&#x27;might upgrade socket transport from &#x22;%s&#x22; to &#x22;%s&#x22;&#x27;
+    , this.transport.name, transport.name);
+
+  this.upgrading = true;
+
+  var self = this;
+
+  // set transport upgrade timer
+  self.upgradeTimeoutTimer = setTimeout(function () {
+    debug(&#x27;client did not complete upgrade - closing transport&#x27;);
+    cleanup();
+    if (&#x27;open&#x27; === transport.readyState) {
+      transport.close();
+    }
+  }, this.server.upgradeTimeout);
+
+  function onPacket (packet) {
+    if (&#x27;ping&#x27; === packet.type &#x26;&#x26; &#x27;probe&#x27; === packet.data) {
+      transport.send([{ type: &#x27;pong&#x27;, data: &#x27;probe&#x27; }]);
+      self.emit(&#x27;upgrading&#x27;, transport);
+      clearInterval(self.checkIntervalTimer);
+      self.checkIntervalTimer = setInterval(check, 100);
+    } else if (&#x27;upgrade&#x27; === packet.type &#x26;&#x26; self.readyState !== &#x27;closed&#x27;) {
+      debug(&#x27;got upgrade packet - upgrading&#x27;);
+      cleanup();
+      self.transport.discard();
+      self.upgraded = true;
+      self.clearTransport();
+      self.setTransport(transport);
+      self.emit(&#x27;upgrade&#x27;, transport);
+      self.setPingTimeout();
+      self.flush();
+      if (self.readyState === &#x27;closing&#x27;) {
+        transport.close(function () {
+          self.onClose(&#x27;forced close&#x27;);
+        });
+      }
+    } else {
+      cleanup();
+      transport.close();
+    }
+  }
+
+  // we force a polling cycle to ensure a fast upgrade
+  function check () {
+    if (&#x27;polling&#x27; === self.transport.name &#x26;&#x26; self.transport.writable) {
+      debug(&#x27;writing a noop packet to polling for fast upgrade&#x27;);
+      self.transport.send([{ type: &#x27;noop&#x27; }]);
+    }
+  }
+
+  function cleanup () {
+    self.upgrading = false;
+
+    clearInterval(self.checkIntervalTimer);
+    self.checkIntervalTimer = null;
+
+    clearTimeout(self.upgradeTimeoutTimer);
+    self.upgradeTimeoutTimer = null;
+
+    transport.removeListener(&#x27;packet&#x27;, onPacket);
+    transport.removeListener(&#x27;close&#x27;, onTransportClose);
+    transport.removeListener(&#x27;error&#x27;, onError);
+    self.removeListener(&#x27;close&#x27;, onClose);
+  }
+
+  function onError (err) {
+    debug(&#x27;client did not complete upgrade - %s&#x27;, err);
+    cleanup();
+    transport.close();
+    transport = null;
+  }
+
+  function onTransportClose () {
+    onError(&#x27;transport closed&#x27;);
+  }
+
+  function onClose () {
+    onError(&#x27;socket closed&#x27;);
+  }
+
+  transport.on(&#x27;packet&#x27;, onPacket);
+  transport.once(&#x27;close&#x27;, onTransportClose);
+  transport.once(&#x27;error&#x27;, onError);
+
+  self.once(&#x27;close&#x27;, onClose);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.onClose" id="apidoc.element.engine.io.Socket.prototype.onClose">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onClose
+        <span class="apidocSignatureSpan">(reason, description)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onClose = function (reason, description) {
+  if (&#x27;closed&#x27; !== this.readyState) {
+    this.readyState = &#x27;closed&#x27;;
+    clearTimeout(this.pingTimeoutTimer);
+    clearInterval(this.checkIntervalTimer);
+    this.checkIntervalTimer = null;
+    clearTimeout(this.upgradeTimeoutTimer);
+    var self = this;
+    // clean writeBuffer in next tick, so developers can still
+    // grab the writeBuffer on &#x27;close&#x27; event
+    process.nextTick(function () {
+      self.writeBuffer = [];
+    });
+    this.packetsFn = [];
+    this.sentCallbackFn = [];
+    this.clearTransport();
+    this.emit(&#x27;close&#x27;, reason, description);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.onError" id="apidoc.element.engine.io.Socket.prototype.onError">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onError
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (err) {
+  debug(&#x27;transport error&#x27;);
+  this.onClose(&#x27;transport error&#x27;, err);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.onOpen" id="apidoc.element.engine.io.Socket.prototype.onOpen">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onOpen
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onOpen = function () {
+  this.readyState = &#x27;open&#x27;;
+
+  // sends an `open` packet
+  this.transport.sid = this.id;
+  this.sendPacket(&#x27;open&#x27;, JSON.stringify({
+    sid: this.id,
+    upgrades: this.getAvailableUpgrades(),
+    pingInterval: this.server.pingInterval,
+    pingTimeout: this.server.pingTimeout
+  }));
+
+  if (this.server.initialPacket) {
+    this.sendPacket(&#x27;message&#x27;, this.server.initialPacket);
+  }
+
+  this.emit(&#x27;open&#x27;);
+  this.setPingTimeout();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.onPacket" id="apidoc.element.engine.io.Socket.prototype.onPacket">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>onPacket
+        <span class="apidocSignatureSpan">(packet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onPacket = function (packet) {
+  if (&#x27;open&#x27; === this.readyState) {
+    // export packet event
+    debug(&#x27;packet&#x27;);
+    this.emit(&#x27;packet&#x27;, packet);
+
+    // Reset ping timeout on any packet, incoming data is a good sign of
+    // other side&#x27;s liveness
+    this.setPingTimeout();
+
+    switch (packet.type) {
+
+      case &#x27;ping&#x27;:
+        debug(&#x27;got ping&#x27;);
+        this.sendPacket(&#x27;pong&#x27;);
+        this.emit(&#x27;heartbeat&#x27;);
+        break;
+
+      case &#x27;error&#x27;:
+        this.onClose(&#x27;parse error&#x27;);
+        break;
+
+      case &#x27;message&#x27;:
+        this.emit(&#x27;data&#x27;, packet.data);
+        this.emit(&#x27;message&#x27;, packet.data);
+        break;
+    }
+  } else {
+    debug(&#x27;packet received with closed socket&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.send" id="apidoc.element.engine.io.Socket.prototype.send">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>send
+        <span class="apidocSignatureSpan">(data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (data, options, callback) {
+  this.sendPacket(&#x27;message&#x27;, data, options, callback);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### (A) Listening on a port
+
+```js
+var engine = require(&#x27;engine.io&#x27;);
+var server = engine.listen(80);
+
+server.on(&#x27;connection&#x27;, function(socket){
+  socket.<span class="apidocCodeKeywordSpan">send</span>(&#x27;utf 8 string&#x27;);
+  socket.send(new Buffer([0, 1, 2, 3, 4, 5])); // binary data
+});
+```
+
+#### (B) Intercepting requests for a http.Server
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.sendPacket" id="apidoc.element.engine.io.Socket.prototype.sendPacket">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>sendPacket
+        <span class="apidocSignatureSpan">(type, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendPacket = function (type, data, options, callback) {
+  if (&#x27;function&#x27; === typeof options) {
+    callback = options;
+    options = null;
+  }
+
+  options = options || {};
+  options.compress = false !== options.compress;
+
+  if (&#x27;closing&#x27; !== this.readyState &#x26;&#x26; &#x27;closed&#x27; !== this.readyState) {
+    debug(&#x27;sending packet &#x22;%s&#x22; (%s)&#x27;, type, data);
+
+    var packet = {
+      type: type,
+      options: options
+    };
+    if (data) packet.data = data;
+
+    // exports packetCreate event
+    this.emit(&#x27;packetCreate&#x27;, packet);
+
+    this.writeBuffer.push(packet);
+
+    // add send callback to object, if defined
+    if (callback) this.packetsFn.push(callback);
+
+    this.flush();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.setPingTimeout" id="apidoc.element.engine.io.Socket.prototype.setPingTimeout">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>setPingTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPingTimeout = function () {
+  var self = this;
+  clearTimeout(self.pingTimeoutTimer);
+  self.pingTimeoutTimer = setTimeout(function () {
+    self.onClose(&#x27;ping timeout&#x27;);
+  }, self.server.pingInterval + self.server.pingTimeout);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.setTransport" id="apidoc.element.engine.io.Socket.prototype.setTransport">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>setTransport
+        <span class="apidocSignatureSpan">(transport)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTransport = function (transport) {
+  var onError = this.onError.bind(this);
+  var onPacket = this.onPacket.bind(this);
+  var flush = this.flush.bind(this);
+  var onClose = this.onClose.bind(this, &#x27;transport close&#x27;);
+
+  this.transport = transport;
+  this.transport.once(&#x27;error&#x27;, onError);
+  this.transport.on(&#x27;packet&#x27;, onPacket);
+  this.transport.on(&#x27;drain&#x27;, flush);
+  this.transport.once(&#x27;close&#x27;, onClose);
+  // this function will manage packet events (also message callbacks)
+  this.setupSendCallback();
+
+  this.cleanupFn.push(function () {
+    transport.removeListener(&#x27;error&#x27;, onError);
+    transport.removeListener(&#x27;packet&#x27;, onPacket);
+    transport.removeListener(&#x27;drain&#x27;, flush);
+    transport.removeListener(&#x27;close&#x27;, onClose);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.setupSendCallback" id="apidoc.element.engine.io.Socket.prototype.setupSendCallback">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>setupSendCallback
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupSendCallback = function () {
+  var self = this;
+  this.transport.on(&#x27;drain&#x27;, onDrain);
+
+  this.cleanupFn.push(function () {
+    self.transport.removeListener(&#x27;drain&#x27;, onDrain);
+  });
+
+  // the message was sent successfully, execute the callback
+  function onDrain () {
+    if (self.sentCallbackFn.length &#x3e; 0) {
+      var seqFn = self.sentCallbackFn.splice(0, 1)[0];
+      if (&#x27;function&#x27; === typeof seqFn) {
+        debug(&#x27;executing send callback&#x27;);
+        seqFn(self.transport);
+      } else if (Array.isArray(seqFn)) {
+        debug(&#x27;executing batch send callback&#x27;);
+        for (var l = seqFn.length, i = 0; i &#x3c; l; i++) {
+          if (&#x27;function&#x27; === typeof seqFn[i]) {
+            seqFn[i](self.transport);
+          }
+        }
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Socket.prototype.write" id="apidoc.element.engine.io.Socket.prototype.write">
+        function <span class="apidocSignatureSpan">engine.io.Socket.prototype.</span>write
+        <span class="apidocSignatureSpan">(data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data, options, callback) {
+  this.sendPacket(&#x27;message&#x27;, data, options, callback);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.Transport" id="apidoc.module.engine.io.Transport">module engine.io.Transport</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.Transport" id="apidoc.element.engine.io.Transport.Transport">
+        function <span class="apidocSignatureSpan">engine.io.</span>Transport
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transport(req) {
+  this.readyState = &#x27;open&#x27;;
+  this.discarded = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.super_" id="apidoc.element.engine.io.Transport.super_">
+        function <span class="apidocSignatureSpan">engine.io.Transport.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.Transport.prototype" id="apidoc.module.engine.io.Transport.prototype">module engine.io.Transport.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.prototype.close" id="apidoc.element.engine.io.Transport.prototype.close">
+        function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>close
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (fn) {
+  if (&#x27;closed&#x27; === this.readyState || &#x27;closing&#x27; === this.readyState) return;
+
+  this.readyState = &#x27;closing&#x27;;
+  this.doClose(fn || noop);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.prototype.discard" id="apidoc.element.engine.io.Transport.prototype.discard">
+        function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>discard
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discard = function () {
+  this.discarded = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.prototype.onClose" id="apidoc.element.engine.io.Transport.prototype.onClose">
+        function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onClose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onClose = function () {
+  this.readyState = &#x27;closed&#x27;;
+  this.emit(&#x27;close&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.prototype.onData" id="apidoc.element.engine.io.Transport.prototype.onData">
+        function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onData = function (data) {
+  this.onPacket(parser.decodePacket(data));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.prototype.onError" id="apidoc.element.engine.io.Transport.prototype.onError">
+        function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onError
+        <span class="apidocSignatureSpan">(msg, desc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (msg, desc) {
+  if (this.listeners(&#x27;error&#x27;).length) {
+    var err = new Error(msg);
+    err.type = &#x27;TransportError&#x27;;
+    err.description = desc;
+    this.emit(&#x27;error&#x27;, err);
+  } else {
+    debug(&#x27;ignored transport error %s (%s)&#x27;, msg, desc);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.prototype.onPacket" id="apidoc.element.engine.io.Transport.prototype.onPacket">
+        function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onPacket
+        <span class="apidocSignatureSpan">(packet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onPacket = function (packet) {
+  this.emit(&#x27;packet&#x27;, packet);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.Transport.prototype.onRequest" id="apidoc.element.engine.io.Transport.prototype.onRequest">
+        function <span class="apidocSignatureSpan">engine.io.Transport.prototype.</span>onRequest
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onRequest = function (req) {
+  debug(&#x27;setting request&#x27;);
+  this.req = req;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.parser" id="apidoc.module.engine.io.parser">module engine.io.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.decodeBase64Packet" id="apidoc.element.engine.io.parser.decodeBase64Packet">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>decodeBase64Packet
+        <span class="apidocSignatureSpan">(msg, binaryType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeBase64Packet = function (msg, binaryType) {
+  var type = packetslist[msg.charAt(0)];
+  var data = new Buffer(msg.substr(1), &#x27;base64&#x27;);
+  if (binaryType === &#x27;arraybuffer&#x27;) {
+    var abv = new Uint8Array(data.length);
+    for (var i = 0; i &#x3c; abv.length; i++){
+      abv[i] = data[i];
+    }
+    data = abv.buffer;
+  }
+  return { type: type, data: data };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.decodePacket" id="apidoc.element.engine.io.parser.decodePacket">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>decodePacket
+        <span class="apidocSignatureSpan">(data, binaryType, utf8decode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodePacket = function (data, binaryType, utf8decode) {
+  if (data === undefined) {
+    return err;
+  }
+
+  var type;
+
+  // String data
+  if (typeof data === &#x27;string&#x27;) {
+
+    type = data.charAt(0);
+
+    if (type === &#x27;b&#x27;) {
+      return exports.decodeBase64Packet(data.substr(1), binaryType);
+    }
+
+    if (utf8decode) {
+      data = tryDecode(data);
+      if (data === false) {
+        return err;
+      }
+    }
+
+    if (Number(type) != type || !packetslist[type]) {
+      return err;
+    }
+
+    if (data.length &#x3e; 1) {
+      return { type: packetslist[type], data: data.substring(1) };
+    } else {
+      return { type: packetslist[type] };
+    }
+  }
+
+  // Binary data
+  if (binaryType === &#x27;arraybuffer&#x27;) {
+    // wrap Buffer/ArrayBuffer data into an Uint8Array
+    var intArray = new Uint8Array(data);
+    type = intArray[0];
+    return { type: packetslist[type], data: intArray.buffer.slice(1) };
+  }
+
+  if (data instanceof ArrayBuffer) {
+    data = arrayBufferToBuffer(data);
+  }
+  type = data[0];
+  return { type: packetslist[type], data: data.slice(1) };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.decodePayload" id="apidoc.element.engine.io.parser.decodePayload">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>decodePayload
+        <span class="apidocSignatureSpan">(data, binaryType, utf8decode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodePayload = function (data, binaryType, utf8decode, callback) {
+  if (typeof data !== &#x27;string&#x27;) {
+    return exports.decodePayloadAsBinary(data, binaryType, callback);
+  }
+
+  if (typeof binaryType === &#x27;function&#x27;) {
+    callback = binaryType;
+    binaryType = null;
+  }
+
+  if (typeof utf8decode === &#x27;function&#x27;) {
+    callback = utf8decode;
+    utf8decode = null;
+  }
+
+  if (data === &#x27;&#x27;) {
+    // parser error - ignoring payload
+    return callback(err, 0, 1);
+  }
+
+  if (utf8decode) {
+    data = tryDecode(data);
+    if (data === false) {
+      return callback(err, 0, 1);
+    }
+  }
+
+  var length = &#x27;&#x27;, n, msg, packet;
+
+  for (var i = 0, l = data.length; i &#x3c; l; i++) {
+    var chr = data.charAt(i);
+
+    if (chr !== &#x27;:&#x27;) {
+      length += chr;
+      continue;
+    }
+
+    if (length === &#x27;&#x27; || (length != (n = Number(length)))) {
+      // parser error - ignoring payload
+      return callback(err, 0, 1);
+    }
+
+    msg = data.substr(i + 1, n);
+
+    if (length != msg.length) {
+      // parser error - ignoring payload
+      return callback(err, 0, 1);
+    }
+
+    if (msg.length) {
+      packet = exports.decodePacket(msg, binaryType, false);
+
+      if (err.type === packet.type &#x26;&#x26; err.data === packet.data) {
+        // parser error in individual packet - ignoring payload
+        return callback(err, 0, 1);
+      }
+
+      var more = callback(packet, i + n, l);
+      if (false === more) return;
+    }
+
+    // advance cursor
+    i += n;
+    length = &#x27;&#x27;;
+  }
+
+  if (length !== &#x27;&#x27;) {
+    // parser error - ignoring payload
+    return callback(err, 0, 1);
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.decodePayloadAsBinary" id="apidoc.element.engine.io.parser.decodePayloadAsBinary">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>decodePayloadAsBinary
+        <span class="apidocSignatureSpan">(data, binaryType, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodePayloadAsBinary = function (data, binaryType, callback) {
+  if (typeof binaryType === &#x27;function&#x27;) {
+    callback = binaryType;
+    binaryType = null;
+  }
+
+  var bufferTail = data;
+  var buffers = [];
+  var i;
+
+  while (bufferTail.length &#x3e; 0) {
+    var strLen = &#x27;&#x27;;
+    var isString = bufferTail[0] === 0;
+    for (i = 1; ; i++) {
+      if (bufferTail[i] === 255)  break;
+      // 310 = char length of Number.MAX_VALUE
+      if (strLen.length &#x3e; 310) {
+        return callback(err, 0, 1);
+      }
+      strLen += &#x27;&#x27; + bufferTail[i];
+    }
+    bufferTail = bufferTail.slice(strLen.length + 1);
+
+    var msgLength = parseInt(strLen, 10);
+
+    var msg = bufferTail.slice(1, msgLength + 1);
+    if (isString) msg = bufferToString(msg);
+    buffers.push(msg);
+    bufferTail = bufferTail.slice(msgLength + 1);
+  }
+
+  var total = buffers.length;
+  for (i = 0; i &#x3c; total; i++) {
+    var buffer = buffers[i];
+    callback(exports.decodePacket(buffer, binaryType, true), i, total);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.encodeBase64Packet" id="apidoc.element.engine.io.parser.encodeBase64Packet">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>encodeBase64Packet
+        <span class="apidocSignatureSpan">(packet, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeBase64Packet = function (packet, callback){
+  if (!Buffer.isBuffer(packet.data)) {
+    packet.data = arrayBufferToBuffer(packet.data);
+  }
+
+  var message = &#x27;b&#x27; + packets[packet.type];
+  message += packet.data.toString(&#x27;base64&#x27;);
+  return callback(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.encodePacket" id="apidoc.element.engine.io.parser.encodePacket">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>encodePacket
+        <span class="apidocSignatureSpan">(packet, supportsBinary, utf8encode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodePacket = function (packet, supportsBinary, utf8encode, callback) {
+  if (typeof supportsBinary === &#x27;function&#x27;) {
+    callback = supportsBinary;
+    supportsBinary = null;
+  }
+
+  if (typeof utf8encode === &#x27;function&#x27;) {
+    callback = utf8encode;
+    utf8encode = null;
+  }
+
+  if (Buffer.isBuffer(packet.data)) {
+    return encodeBuffer(packet, supportsBinary, callback);
+  } else if (packet.data &#x26;&#x26; (packet.data.buffer || packet.data) instanceof ArrayBuffer) {
+    packet.data = arrayBufferToBuffer(packet.data);
+    return encodeBuffer(packet, supportsBinary, callback);
+  }
+
+  // Sending data as a utf-8 string
+  var encoded = packets[packet.type];
+
+  // data fragment is optional
+  if (undefined !== packet.data) {
+    encoded += utf8encode ? utf8.encode(String(packet.data), { strict: false }) : String(packet.data);
+  }
+
+  return callback(&#x27;&#x27; + encoded);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.encodePayload" id="apidoc.element.engine.io.parser.encodePayload">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>encodePayload
+        <span class="apidocSignatureSpan">(packets, supportsBinary, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodePayload = function (packets, supportsBinary, callback) {
+  if (typeof supportsBinary === &#x27;function&#x27;) {
+    callback = supportsBinary;
+    supportsBinary = null;
+  }
+
+  if (supportsBinary &#x26;&#x26; hasBinary(packets)) {
+    return exports.encodePayloadAsBinary(packets, callback);
+  }
+
+  if (!packets.length) {
+    return callback(&#x27;0:&#x27;);
+  }
+
+  function encodeOne(packet, doneCallback) {
+    exports.encodePacket(packet, supportsBinary, false, function(message) {
+      doneCallback(null, setLengthHeader(message));
+    });
+  }
+
+  map(packets, encodeOne, function(err, results) {
+    return callback(results.join(&#x27;&#x27;));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.parser.encodePayloadAsBinary" id="apidoc.element.engine.io.parser.encodePayloadAsBinary">
+        function <span class="apidocSignatureSpan">engine.io.parser.</span>encodePayloadAsBinary
+        <span class="apidocSignatureSpan">(packets, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodePayloadAsBinary = function (packets, callback) {
+  if (!packets.length) {
+    return callback(new Buffer(0));
+  }
+
+  map(packets, encodeOneBinaryPacket, function(err, results) {
+    return callback(Buffer.concat(results));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.transports" id="apidoc.module.engine.io.transports">module engine.io.transports</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.transports.polling" id="apidoc.element.engine.io.transports.polling">
+        function <span class="apidocSignatureSpan">engine.io.transports.</span>polling
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function polling(req) {
+  if (&#x27;string&#x27; === typeof req._query.j) {
+    return new JSONP(req);
+  } else {
+    return new XHR(req);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.transports.websocket" id="apidoc.element.engine.io.transports.websocket">
+        function <span class="apidocSignatureSpan">engine.io.transports.</span>websocket
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebSocket(req) {
+  Transport.call(this, req);
+  var self = this;
+  this.socket = req.websocket;
+  this.socket.on(&#x27;message&#x27;, this.onData.bind(this));
+  this.socket.once(&#x27;close&#x27;, this.onClose.bind(this));
+  this.socket.on(&#x27;error&#x27;, this.onError.bind(this));
+  this.socket.on(&#x27;headers&#x27;, onHeaders);
+  this.writable = true;
+  this.perMessageDeflate = null;
+
+  function onHeaders (headers) {
+    self.emit(&#x27;headers&#x27;, headers);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.transports.websocket" id="apidoc.module.engine.io.transports.websocket">module engine.io.transports.websocket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.transports.websocket.websocket" id="apidoc.element.engine.io.transports.websocket.websocket">
+        function <span class="apidocSignatureSpan">engine.io.transports.</span>websocket
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebSocket(req) {
+  Transport.call(this, req);
+  var self = this;
+  this.socket = req.websocket;
+  this.socket.on(&#x27;message&#x27;, this.onData.bind(this));
+  this.socket.once(&#x27;close&#x27;, this.onClose.bind(this));
+  this.socket.on(&#x27;error&#x27;, this.onError.bind(this));
+  this.socket.on(&#x27;headers&#x27;, onHeaders);
+  this.writable = true;
+  this.perMessageDeflate = null;
+
+  function onHeaders (headers) {
+    self.emit(&#x27;headers&#x27;, headers);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.transports.websocket.super_" id="apidoc.element.engine.io.transports.websocket.super_">
+        function <span class="apidocSignatureSpan">engine.io.transports.websocket.</span>super_
+        <span class="apidocSignatureSpan">(req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transport(req) {
+  this.readyState = &#x27;open&#x27;;
+  this.discarded = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.engine.io.transports.websocket.prototype" id="apidoc.module.engine.io.transports.websocket.prototype">module engine.io.transports.websocket.prototype</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.transports.websocket.prototype.doClose" id="apidoc.element.engine.io.transports.websocket.prototype.doClose">
+        function <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>doClose
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doClose = function (fn) {
+  debug(&#x27;closing&#x27;);
+  this.socket.close();
+  fn &#x26;&#x26; fn();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.transports.websocket.prototype.onData" id="apidoc.element.engine.io.transports.websocket.prototype.onData">
+        function <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>onData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onData = function (data) {
+  debug(&#x27;received &#x22;%s&#x22;&#x27;, data);
+  Transport.prototype.onData.call(this, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.engine.io.transports.websocket.prototype.send" id="apidoc.element.engine.io.transports.websocket.prototype.send">
+        function <span class="apidocSignatureSpan">engine.io.transports.websocket.prototype.</span>send
+        <span class="apidocSignatureSpan">(packets)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (packets) {
+  var self = this;
+
+  for (var i = 0; i &#x3c; packets.length; i++) {
+    var packet = packets[i];
+    parser.encodePacket(packet, self.supportsBinary, send);
+  }
+
+  function send (data) {
+    debug(&#x27;writing &#x22;%s&#x22;&#x27;, data);
+
+    // always creates a new object since ws modifies it
+    var opts = {};
+    if (packet.options) {
+      opts.compress = packet.options.compress;
+    }
+
+    if (self.perMessageDeflate) {
+      var len = &#x27;string&#x27; === typeof data ? Buffer.byteLength(data) : data.length;
+      if (len &#x3c; self.perMessageDeflate.threshold) {
+        opts.compress = false;
+      }
+    }
+
+    self.writable = false;
+    self.socket.send(data, opts, onEnd);
+  }
+
+  function onEnd (err) {
+    if (err) return self.onError(&#x27;write error&#x27;, err.stack);
+    self.writable = true;
+    self.emit(&#x27;drain&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+#### (A) Listening on a port
+
+```js
+var engine = require(&#x27;engine.io&#x27;);
+var server = engine.listen(80);
+
+server.on(&#x27;connection&#x27;, function(socket){
+  socket.<span class="apidocCodeKeywordSpan">send</span>(&#x27;utf 8 string&#x27;);
+  socket.send(new Buffer([0, 1, 2, 3, 4, 5])); // binary data
+});
+```
+
+#### (B) Intercepting requests for a http.Server
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
