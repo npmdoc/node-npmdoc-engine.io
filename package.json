@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "api documentation for [engine.io (v3.0.0)](https://github.com/socketio/engine.io) [![npm package](https://img.shields.io/npm/v/npmdoc-engine.io.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-engine.io) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-engine.io.svg)](https://travis-ci.org/npmdoc/node-npmdoc-engine.io)",
+    "description": "#### api documentation for  [engine.io (v3.0.0)](https://github.com/socketio/engine.io)  [![npm package](https://img.shields.io/npm/v/npmdoc-engine.io.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-engine.io) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-engine.io.svg)](https://travis-ci.org/npmdoc/node-npmdoc-engine.io)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "engine.io": "*",
@@ -35,5 +35,5 @@
         "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
 }
